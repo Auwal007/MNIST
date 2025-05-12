@@ -1,0 +1,5 @@
+Flask
+scikit-learn
+numpy
+Pillow
+gunicorn # Optional, but good for running Flask in production

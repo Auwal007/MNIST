@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST Number Recognizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Draw a Digit (0-9)</h1>
+
+    <div class="controls">
+        <button id="clear-canvas">Clear Drawing</button>
+    </div>
+
+    <canvas id="drawing-canvas" width="280" height="280"></canvas>
+
+    <div class="controls">
+        <button id="predict-drawing">Predict Drawing</button>
+    </div>
+
+    <hr>
+
+    <h1>Or Upload/Capture an Image</h1>
+    <div class="controls">
+        <label for="image-upload" class="button-like">Upload Image</label>
+        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+        <button id="start-camera">Use Camera</button>
+    </div>
+
+    <div id="camera-area" style="display: none;">
+        <video id="camera-stream" width="280" height="210" autoplay playsinline></video>
+        <canvas id="capture-canvas" width="280" height="210" style="display: none;"></canvas>
+        <button id="capture-photo">Capture & Predict</button>
+        <button id="stop-camera">Stop Camera</button>
+    </div>
+
+     <div id="image-preview-area" style="margin-top: 10px;">
+        <p>Preview:</p>
+        <img id="image-preview" src="#" alt="Image Preview" style="display:none; max-width: 280px; max-height: 280px; border: 1px solid #ccc;"/>
+     </div>
+
+
+    <h1>Prediction Result</h1>
+    <div id="prediction-result">?</div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

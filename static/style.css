@@ -1,0 +1,83 @@
+/* static/style.css */
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+#drawing-canvas {
+    border: 2px solid black;
+    cursor: crosshair;
+    background-color: white; /* Start with white background */
+    touch-action: none; /* Prevent scrolling on touch devices */
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px; /* Add space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+}
+
+button, .button-like {
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    text-align: center; /* For label acting as button */
+}
+
+button:hover, .button-like:hover {
+    background-color: #0056b3;
+}
+
+button:active, .button-like:active {
+    background-color: #004085;
+}
+
+#prediction-result {
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: bold;
+    color: #dc3545;
+    min-height: 50px; /* Ensure space even when no result */
+}
+
+hr {
+    width: 80%;
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+#camera-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    background-color: #eee;
+}
+
+#camera-stream {
+    border: 1px solid #999;
+}
+
+#image-preview-area {
+    text-align: center;
+}
