@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle = 'white'; // Background color
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.strokeStyle = 'black'; // Ink color
-        ctx.lineWidth = 15; // Thickness of the line
+        ctx.lineWidth = 10; // Thickness of the line
         ctx.lineCap = 'round'; // Rounded ends for lines
         ctx.lineJoin = 'round'; // Rounded corners where lines meet
         predictionResult.textContent = '?'; // Reset prediction on clear
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function sendImageForPrediction(imageDataUrl) {
-        predictionResult.textContent = 'Processing...'; // Indicate processing
+        predictionResult.textContent = 'Predicting 😊...'; // Indicate processing
         try {
             const response = await fetch('/predict', {
                 method: 'POST',

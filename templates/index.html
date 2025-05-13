@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MNIST Number Recognizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Draw a Digit (0-9)</h1>
+    <p class="data-collection-notice">The drawing or image you upload for prediction is being collected and store for model enhancement, please draw more of digits that are not being predicted accurately, thank you. </p>
+
 
     <div class="controls">
         <button id="clear-canvas">Clear Drawing</button>
@@ -45,5 +48,15 @@
     <div id="prediction-result">?</div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com/Auwal007" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/M0hammadAI" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>&copy; Just a model real data test | 2025 Muhammad Adam. All rights reserved.</p>
+    </footer>
+
+
 </body>
 </html>
