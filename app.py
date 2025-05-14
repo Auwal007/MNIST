@@ -124,11 +124,11 @@ def preprocess_image(base64_image_data):
         
         # Normalize (important: this is what the model expects)
         # After thresholding and inversion, values will be 0 or 255. Normalizing makes them 0.0 or 1.0.
-        image_np_normalized_28x28 = image_np_28x28 / 255.0
+        #image_np_normalized_28x28 = image_np_28x28 / 255.0
 
-        last_numerical_array_for_saving = image_np_normalized_28x28.copy()
+        last_numerical_array_for_saving = image_np_28x28.copy()
 
-        image_flat_for_model = image_np_normalized_28x28.flatten()
+        image_flat_for_model = image_np_28x28.flatten()
 
         return image_flat_for_model.reshape(1, -1), original_image
 
