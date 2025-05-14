@@ -29,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.fillStyle = 'white'; // Background color
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.strokeStyle = 'black'; // Ink color
-        ctx.lineWidth = 10; // Thickness of the line
+        ctx.lineWidth = 5; // Thickness of the line
         ctx.lineCap = 'round'; // Rounded ends for lines
         ctx.lineJoin = 'round'; // Rounded corners where lines meet
+        ctx.globalAlpha = 1;
+        ctx.globalCompositeOperation = 'source-over'
         predictionResult.textContent = '?'; // Reset prediction on clear
     }
 

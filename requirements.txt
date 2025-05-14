@@ -3,3 +3,6 @@ scikit-learn
 numpy
 Pillow
 gunicorn # Optional, but good for running Flask in production
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
