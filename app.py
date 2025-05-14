@@ -107,13 +107,13 @@ def preprocess_image(base64_image_data):
         image_gray = original_image.convert('L')
 
         # <<< --- ADDED THRESHOLDING STEP --- >>>
-        image_thresholded = apply_threshold_func(image_gray, threshold=128) # Using default threshold 128
+        # image_thresholded = apply_threshold_func(image_gray, threshold=128) # Using default threshold 128
 
         # MNIST typically has white digits on a black background.
         # If your canvas has black drawing on white, inversion is needed.
         # After thresholding, if 0 is black and 255 is white:
         #   - If drawn digit is black (0) on white (255), inverting makes it white (255) on black (0).
-        image_inverted = ImageOps.invert(image_thresholded) # Perform inversion on the thresholded image
+        image_inverted = ImageOps.invert(image_gray) # Perform inversion on the thresholded image
         
         image_resized = image_inverted.resize((28, 28), Image.Resampling.LANCZOS)
 
