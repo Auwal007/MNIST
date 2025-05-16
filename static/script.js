@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     async function sendImageForPrediction(imageDataUrl) {
-        predictionResult.textContent = 'Predicting 😊...'; // Indicate processing
+        predictionResult.textContent = 'Predicting 😊'; // Indicate processing
         try {
             const response = await fetch('/predict', {
                 method: 'POST',
