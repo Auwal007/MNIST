@@ -33,10 +33,10 @@ for d in [NUMERICAL_DATA_LOG_DIR, METADATA_LOG_DIR, VIEWABLE_PREPROCESSED_IMG_LO
 
 # Load the pre-trained Scikit-learn model
 try:
-    model = joblib.load('mnist_model.joblib')
+    model = joblib.load('mnist_model_final.joblib')
     print("Model loaded successfully.")
 except FileNotFoundError:
-    print("Error: mnist_model.joblib not found. Make sure the model file is in the correct directory.")
+    print("Error: mnist_model_final.joblib not found. Make sure the model file is in the correct directory.")
     model = None
 except Exception as e:
     print(f"Error loading model: {e}")
@@ -71,10 +71,6 @@ def apply_threshold(base64_image_data, threshold=128):
                 pixels_out[i, j] = 255 # White
 
     return image_binary
-
-# Assuming image_gray is your grayscale image from the canvas
-# image_binary = apply_threshold(image_gray, threshold=150) # Adjust threshold as needed
-# image_resized = image_binary.resize((28, 28), Image.Resampling.LANCZOS) # Then resize the binary image
 
 
 ##############################
@@ -161,7 +157,6 @@ def predict():
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")
         filename_base = f"log_{timestamp}" # Consistent base for related log files
 
-        # 1. Save the 28x28 numerical array data
         # This is the key data you want for re-feeding to your local model
         if last_numerical_array_for_saving is not None:
             numerical_data_path = os.path.join(NUMERICAL_DATA_LOG_DIR, f"{filename_base}_data.npy")
@@ -170,7 +165,6 @@ def predict():
             except Exception as e:
                 print(f"Error saving numerical data: {e}")
 
-        # 2. (Optional but recommended) Save the viewable 28x28 preprocessed image
         # This helps visually confirm what the numerical array represents.
         if last_viewable_preprocessed_pil_for_saving is not None:
             viewable_img_path = os.path.join(VIEWABLE_PREPROCESSED_IMG_LOG_DIR, f"{filename_base}_view.png")
